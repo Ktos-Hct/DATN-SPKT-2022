@@ -1,0 +1,14 @@
+#:import MapView kivy_garden.mapview.MapView
+
+<taonode>:
+
+    lat: 10.762622
+    lon: 106.660172
+    zoom: 10
+    on_zoom:
+        self.zoom =20 if self.zoom>20 else self.zoom
+        self.zoom =10 if self.zoom<10 else self.zoom
+    on_lat:
+        self.start_getting_markets_in_fov()
+    on_lon:
+        self.start_getting_markets_in_fov()
